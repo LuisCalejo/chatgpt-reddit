@@ -9,5 +9,5 @@ This script extracts the most relevant posts from Reddit for a certain topic and
 - `get_reddit_posts`: extract the most relevant posts from Reddit for the selected topic and subreddits.
 - `get_chatgpt_summaries`: send posts to the OpenAI API and create a summary 
 
-[![](images/thumbnail.png)](https://youtu.be/qH9KWXHIM9U)
+[![](images/thumbnail.jpg)](https://youtu.be/qH9KWXHIM9U)
 https://youtu.be/qH9KWXHIM9U
