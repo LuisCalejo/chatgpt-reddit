@@ -6,23 +6,26 @@ from time import sleep
 
 LIMIT_POSTS = 2000
 LIMIT_API_REQUESTS = 20000
-SKIP_ROUND_0 = False
+SKIP_ROUND_0 = True
 START_AT_POST = 0
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 LIMIT_WORDS_MIN = 100  # min number of words per request (soft constraint)
 LIMIT_WORDS_MAX = 450  # max number of words per req
+LIMIT_CHARACTERS_REQUEST = 3900
 SYSTEM_PROMPT = "You summarize Reddit posts about ChatGPT in 20-50 words. If you don't know, you reply with 'NA'."
 SYSTEM_PROMPT_SUMMARIES = "You analyze summaries (made by chatgpt) of Reddit posts and say the most relevant points " \
-                          "in 20-50  words. You can combine or omit summaries if relevant "
-TIMER = 0  # Waiting time in seconds between each request to avoid being blocked by server
+                          "in 50-80  words. You can combine or omit summaries if relevant. Don't explain what ChatGPT " \
+                          "is. Give a higher priority to the opinion of the users. I'm interested in finding out how " \
+                          "users feel about ChatGPT "
+TIMER = 1  # Waiting time in seconds between each request to avoid being blocked by server
 POSTS_DIR = '../data/posts'
 OUTPUT_DIR = '../data/output'
 
 
 def ask_chatgpt(system_prompt, user_prompt):
     total_tokens = len(system_prompt) + len(user_prompt)
-    user_prompt_max = 3900 - len(system_prompt)
-    if total_tokens > 3900:
+    user_prompt_max = LIMIT_CHARACTERS_REQUEST - len(system_prompt)
+    if total_tokens > LIMIT_CHARACTERS_REQUEST:
         user_prompt = user_prompt[0:user_prompt_max] + ' [post is too long to display full]'
     openai.api_key = OPENAI_API_KEY
     messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]

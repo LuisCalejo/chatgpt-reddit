@@ -6,22 +6,7 @@ import praw
 
 LIMIT = 250  # Limit per request
 TIMER = 2  # Waiting time in seconds between each request to avoid being blocked by server
-SUBREDDITS = ['all', 'ChatGPT', 'chatgpt_prompts_', 'chatgpt_promptDesign', 'OpenAI', 'singularity', 'chatgpt_newtech',
-              'ChatgptStories', 'technology', 'GPT3', 'chatgpt_de', 'chatgpt_brasil', 'ChatGPTCoding', 'ChatGPTPro',
-              'ChatGPT_Prompts', 'ChatGPTGoneWild', 'ProgrammerHumor', 'ArtificialInteligence', 'ChatGPTPromptGenius',
-              'ChatGPTJailbreak', 'Futurology', 'artificial', 'ChatGPT_FR', 'ChatGptDAN', 'StableDiffusion',
-              'midjourney', 'ChatGPTforWork', 'ChatGPTforall', 'AnarchyChess', 'conspiracy', 'ChatGPTjailbreaks',
-              'ChatGPT_Sims', 'MachineLearning', 'copypasta', 'ChatGPTMemes', 'ChatGPTSucks', 'SideProject', 'antiwork',
-              'crackGPT', 'ChatGPT4Global', 'Professors', 'chatGPT4userRs', 'ChatGPT_LegalAdviceUS', 'tech',
-              'wallstreetbets', 'ChatGPT_Ideas_', 'ChatGPT_Tips', 'technews', 'shitposting', 'ChatGPT_RPG',
-              'chatgptcirclejerk', 'aipromptprogramming', 'developersIndia', 'chatGPTprogramming', 'ChatGPTAdventures',
-              'bing', 'programming', 'ChatGPTSpanish', 'ChatGPTalk', 'exmormon', 'memes', 'ChatGPTPrompts',
-              'ChatGPTBrasil', 'brasil', 'france', 'ChatGPTGuild', 'ChatGPTes', 'Teachers', 'brasilivre',
-              'chatgptoutofcontext', 'ChatGPTLibertas', 'PoliticalCompassMemes', 'learnmachinelearning',
-              'chatgptprompteng', 'ChatGPTdeutsch', 'exjw', 'CryptoCurrency', 'southpark', 'redscarepod',
-              'ChatGPTRoleplay', 'brdev', 'Superstonk', 'ChatGPTology', 'chatGPTism', 'KGBTR', 'shortcuts',
-              'ChatGPTSymposium', 'ChatGPTWrongAnswers', 'LinkedInLunatics', 'ApplyingToCollege', 'ChatGPTSerious',
-              'chatgptwritingprompts', 'okbuddychicanery', 'GoogleBard', 'Google_Bard_Chatbot']
+SUBREDDITS = ['all', 'ChatGPT', 'OpenAI', 'technology', 'ArtificialInteligence', 'Futurology']
 
 
 client_id = os.environ.get('REDDIT_CLIENT_ID')
